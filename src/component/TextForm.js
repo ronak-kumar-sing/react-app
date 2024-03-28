@@ -19,16 +19,16 @@ export default function TextForm(props) {
     }
   return (
     <>
-    <h1>{props.heading}</h1>
+    <h1 style={{color: props.mode ==='dark' ? 'white':'black'}}>{props.heading}</h1>
     <div className="mb-3">
     {/* <label for="exampleFormControlTextarea1" className="form-label"></label> */}
-    <textarea className="form-control" value={Text} onChange={onhit2}  id="exampleFormControlTextarea1" rows="7"></textarea>
+    <textarea className="form-control" style={{background: props.mode ==='dark' ? '#1e1d1d':'white', color: props.mode ==='dark' ? 'white':'black'}} value={Text} onChange={onhit2}  id="exampleFormControlTextarea1" rows="7"></textarea>
     </div>
     <button className="btn btn-primary mx-2" onClick={onhit}>Uppercase</button>
     <button className="btn btn-primary mx-2" onClick={onhitl}>Lowercase</button>
     <button className="btn btn-primary mx-2" onClick={ClearText}>Clear</button>
-    <div className="container">
-        <p>{Text.split(" ").length} words {Text.length} Character</p>
+    <div className="container" style={{color: props.mode ==='dark' ? 'white':'black'}}>
+        <p >{Text.split(" ").length} words {Text.length} Character</p>
     </div>
     </>
   )
